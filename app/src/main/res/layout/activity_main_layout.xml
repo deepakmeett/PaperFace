@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
-
+    
     <include
         layout="@layout/app_bar_main_layout"
         android:layout_width="match_parent"
@@ -23,29 +23,31 @@
         android:background="@drawable/shading"
         app:headerLayout="@layout/nav_header_main_layout"
         app:menu="@menu/activity_main_layout_drawer" >
+        
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:padding="16dp">-->
 
-        <!--        <LinearLayout-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:orientation="vertical"-->
-        <!--            android:layout_gravity="bottom"-->
-        <!--            android:padding="16dp">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/logOut"-->
+<!--                android:textSize="20sp"-->
+<!--                android:drawablePadding="30dp"-->
+<!--                android:drawableTint="@color/gray"-->
+<!--                android:drawableStart="@drawable/ic_exit_to_app_black_24dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:fontFamily="sans-serif-medium"-->
+<!--                android:text="Log Out"/>-->
 
-        <!--            <TextView-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:id="@+id/logOut"-->
-        <!--                android:textSize="20sp"-->
-        <!--                android:drawablePadding="30dp"-->
-        <!--                android:drawableTint="@color/gray"-->
-        <!--                android:drawableStart="@drawable/ic_exit_to_app_black_24dp"-->
-        <!--                android:textColor="@color/black"-->
-        <!--                android:fontFamily="sans-serif-medium"-->
-        <!--                android:text="Log Out"/>-->
-
-        <!--        </LinearLayout>-->
+<!--        </LinearLayout>-->
 
     </com.google.android.material.navigation.NavigationView>
-
-
+    
+    
 </androidx.drawerlayout.widget.DrawerLayout>
+
+

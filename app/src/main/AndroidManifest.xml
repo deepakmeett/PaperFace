@@ -13,15 +13,18 @@
         <activity
             android:name=".MainLayout"
             android:label="@string/title_activity_main_layout"
-           ></activity>
-        <activity android:name=".ShopkeeperActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity">
+            android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ShopkeeperActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainActivity">
+            
         </activity>
     </application>
 

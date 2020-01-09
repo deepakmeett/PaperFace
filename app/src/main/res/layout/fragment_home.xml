@@ -117,7 +117,7 @@
             android:textColor="@color/darkBlack"
             android:textSize="18sp"/>
 
-        <TextView
+        <EditText
             android:id="@+id/edit_Pages"
             android:layout_width="80dp"
             android:layout_height="30dp"
@@ -141,7 +141,7 @@
             android:textColor="@color/darkBlack"
             android:textSize="18sp"/>
 
-        <TextView
+        <EditText
             android:id="@+id/edit_Rs"
             android:layout_width="80dp"
             android:layout_height="30dp"
