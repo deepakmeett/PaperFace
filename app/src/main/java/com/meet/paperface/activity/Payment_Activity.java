@@ -201,6 +201,10 @@ int k=0;
 
 
                                             } else {
+
+                                                final String currentDate = DateFormat.getDateTimeInstance().format(new Date());
+
+
                                                 HashMap<String, String> map = new HashMap<>();
                                                 map.put("hostelname", hostelName);
                                                 map.put("mobileno", mobilenumber);
@@ -211,7 +215,8 @@ int k=0;
                                                 map.put("totalpage", page);
                                                 map.put("totalrs", rs);
                                                 map.put("uid", myuid);
-                                                final String currentDate = DateFormat.getDateTimeInstance().format(new Date());
+                                                map.put("date", currentDate);
+
                                                 HashMap<String, String> hashMap = new HashMap<>();
                                                 hashMap.put("page", page);
                                                 hashMap.put("rs", rs);
@@ -293,7 +298,6 @@ int k=0;
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String text = adapterView.getItemAtPosition(i).toString();
-        Toast.makeText(Payment_Activity.this, text, Toast.LENGTH_SHORT).show();
         hostel_name_Payment.setTag(text);
 
     }
@@ -329,6 +333,7 @@ int k=0;
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Orders");
                 dr = FirebaseDatabase.getInstance().getReference().child("YourOrder");
 
+                final String currentDate = DateFormat.getDateTimeInstance().format(new Date());
 
                 HashMap<String, String> map = new HashMap<>();
                 map.put("hostelname", hostelName);
@@ -340,8 +345,8 @@ int k=0;
                 map.put("totalpage", page);
                 map.put("totalrs", rs);
                 map.put("uid", myuid);
+                map.put("date", currentDate);
 
-                final String currentDate = DateFormat.getDateTimeInstance().format(new Date());
                 HashMap<String, String> hashMap = new HashMap<>();
                 hashMap.put("page", page);
                 hashMap.put("rs", rs);
@@ -427,9 +432,7 @@ int k=0;
         NetworkInfo network = Objects.requireNonNull(connectivityManager).getActiveNetworkInfo();
         if (network != null) {
             if (network.getType() == ConnectivityManager.TYPE_WIFI) {
-//                Toast.makeText( getApplicationContext(), "WIFI ENABLED", Toast.LENGTH_SHORT ).show();
             } else if (network.getType() == ConnectivityManager.TYPE_MOBILE) {
-//                Toast.makeText( getApplicationContext(), "Mob ENABLED", Toast.LENGTH_SHORT ).show();
             }
         } else {
             showDialoge();

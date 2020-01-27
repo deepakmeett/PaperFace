@@ -139,7 +139,6 @@ public class Home_Fragment extends Fragment {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                            Toast.makeText(getActivity(), Objects.requireNonNull(dataSnapshot.getValue()).toString(), Toast.LENGTH_SHORT).show();
                             String pages = edit_how.getText().toString();
                             String extrapages = edit_extra.getText().toString();
                             int total_pages;

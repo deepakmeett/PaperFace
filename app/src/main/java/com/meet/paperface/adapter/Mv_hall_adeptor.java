@@ -72,6 +72,8 @@ public class Mv_hall_adeptor extends RecyclerView.Adapter<Mv_hall_adeptor.ViewHo
         holder.roomno.setText( fupload.get( position ).getRoomno() );
         holder.totalpage.setText( fupload.get( position ).getTotalpage() );
         holder.totalrs.setText( fupload.get( position ).getTotalrs() );
+        holder.date.setText( fupload.get( position ).getDate() );
+
         holder.x.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,6 +94,8 @@ public class Mv_hall_adeptor extends RecyclerView.Adapter<Mv_hall_adeptor.ViewHo
                 hashMap.put("totalpage", fupload.get( position ).getTotalpage());
                 hashMap.put("totalrs", fupload.get( position ).getTotalrs());
                 hashMap.put("uid", fupload.get( position ).getUid());
+                hashMap.put("date", fupload.get( position ).getDate());
+
                 databaseReferenceall.push().setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -149,6 +153,8 @@ public class Mv_hall_adeptor extends RecyclerView.Adapter<Mv_hall_adeptor.ViewHo
         final TextView roomno;
         final TextView totalpage;
         final TextView totalrs;
+        TextView date;
+
         final ImageView x;
 
         ViewHolder(@NonNull View itemView) {
@@ -161,6 +167,8 @@ public class Mv_hall_adeptor extends RecyclerView.Adapter<Mv_hall_adeptor.ViewHo
             roomno = itemView.findViewById( R.id.card_room_blank );
             totalpage = itemView.findViewById( R.id.card_Pages_Blank );
             totalrs = itemView.findViewById( R.id.card_Rupees_Blank );
+            date = itemView.findViewById( R.id.card_date_blank );
+
             x = itemView.findViewById( R.id.imageview );
         }
     }

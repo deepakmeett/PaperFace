@@ -15,11 +15,27 @@
       },
       "oauth_client": [
         {
-          "client_id": "1084577346240-2dcht27kasufh1p6enp31et4h09iq1ik.apps.googleusercontent.com",
+          "client_id": "1084577346240-338fsfsamp3f4ihqjto3t29fgflm4kkt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.meet.paperface",
             "certificate_hash": "bb0c6984879823cee6e869cd2d992ce8387032b9"
+          }
+        },
+        {
+          "client_id": "1084577346240-dim8dvbpnkuugdrdn6o882vo99ajagdp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meet.paperface",
+            "certificate_hash": "7f63aa21b6e4d870b6e1f8b8946e374f0ae21c08"
+          }
+        },
+        {
+          "client_id": "1084577346240-6bdfaeagekkd29c5lbonrk5dn7t1fj1i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meet.paperface",
+            "certificate_hash": "e8a06721e8d27b8b26ff2f87f78da6339b24628f"
           }
         },
         {

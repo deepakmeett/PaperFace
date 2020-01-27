@@ -153,7 +153,10 @@ public class Register_Activity extends AppCompatActivity {
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult( ApiException.class );
-                if (account != null) firebaseAuthWithGoogle( account );
+                if (account != null) {
+                    firebaseAuthWithGoogle(account);
+                }
+
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w( TAG, "Google sign in failed", e );
@@ -200,7 +203,12 @@ public class Register_Activity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount( getApplicationContext() );
+
+        if(user!=null){
+            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount( getApplicationContext() );
+
+        }
+
         //            String email = user.getEmail();
         ////            String photo = String.valueOf( user.getPhotoUrl() );
         //            text.setText( "Info:\n" );

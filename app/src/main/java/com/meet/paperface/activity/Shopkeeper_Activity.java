@@ -53,7 +53,7 @@ public class Shopkeeper_Activity extends AppCompatActivity {
                     Toast.makeText( Shopkeeper_Activity.this, "Field can't be empty", Toast.LENGTH_SHORT ).show();
                 } else if (password_sk.isEmpty()) {
                     Toast.makeText( Shopkeeper_Activity.this, "Field can't be empty", Toast.LENGTH_SHORT ).show();
-                } else if (!email_sk.equals( "Md@123" ) || !password_sk.equals( "Md@123" )) {
+                } else if (!email_sk.equals( "diamond@gmail.com" ) || !password_sk.equals( "diamondstart@up" )) {
                     Toast.makeText( Shopkeeper_Activity.this, "Credential does not match", Toast.LENGTH_SHORT ).show();
                 } else {
                     Intent intent = new Intent( Shopkeeper_Activity.this, Recycler_Activity.class );

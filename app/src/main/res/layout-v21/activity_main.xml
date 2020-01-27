@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Login_Activity">
+    tools:context=".activity.Login_Activity"
+    android:scrollbarThumbVertical="@android:color/transparent"
+android:fillViewport="true"
+    >
 
-    <ScrollView
-        android:id="@+id/scrollOne"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbarThumbVertical="@android:color/transparent">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -113,18 +116,18 @@
                 android:textColor="@color/gray"
                 android:textSize="16sp"/>
         </RelativeLayout>
-    </ScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/scrollOne"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
+        android:layout_marginTop="50dp"
         android:paddingBottom="10dp">
 
         <TextView
             android:id="@+id/signUp"
+            android:visibility="visible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -153,5 +156,10 @@
             android:textColor="@color/blue"
             android:textSize="18sp"
             android:visibility="invisible"/>
+
     </RelativeLayout>
-</RelativeLayout>
+
+   </LinearLayout>
+
+
+</ScrollView>

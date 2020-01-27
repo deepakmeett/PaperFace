@@ -62,14 +62,13 @@ public class MainLayout extends AppCompatActivity implements BottomSheetName.Bot
     private TextView name;
     private FragmentTransaction fragmentTransaction;
     private int i = 1;
-    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main_layout );
         Toolbar toolbar = findViewById( R.id.toolbar );
-        view = findViewById( R.id.nsb );
+        View view = findViewById(R.id.nsb);
         setSupportActionBar( toolbar );
         DrawerLayout drawer = findViewById( R.id.drawer_layout );
         mtoggle = new ActionBarDrawerToggle( this, drawer, R.string.open, R.string.close );
@@ -95,11 +94,8 @@ public class MainLayout extends AppCompatActivity implements BottomSheetName.Bot
         }
 
 
-//                String myuid = firebaseUser.getUid().toString();
         NavigationView navigationView = findViewById( R.id.nav_view );
         updatenavHolder();
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
 
         dr=FirebaseDatabase.getInstance().getReference().child("Available");
 
@@ -122,12 +118,10 @@ public class MainLayout extends AppCompatActivity implements BottomSheetName.Bot
 
 
         AppBarConfiguration mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_Yourorder, R.id.nav_pastorder, R.id.nav_Aboutus, R.id.nav_AnyImpruvment, R.id.nav_share, R.id.nav_Story, R.id.nav_privacy)
+                R.id.nav_home, R.id.nav_Yourorder, R.id.nav_pastorder, R.id.nav_Aboutus, R.id.nav_AnyImpruvment, R.id.nav_share, R.id.nav_Story,R.id.nav_order, R.id.nav_privacy)
                 .setDrawerLayout(drawer)
                 .build();
-//        NavController navController = Navigation.findNavController( this, R.id.nav_host_fragment );
-//        NavigationUI.setupActionBarWithNavController( this, navController, mAppBarConfiguration );
-//        NavigationUI.setupWithNavController( navigationView, navController );
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -151,17 +145,23 @@ public class MainLayout extends AppCompatActivity implements BottomSheetName.Bot
                     fragmentTransaction.replace(R.id.frame, new AboutUs_Fragment());
                     fragmentTransaction.commit();
                     i = 0;
-                } else if (id == R.id.nav_AnyImpruvment) {
-                    Uri hii = Uri.parse("smsto:" + "+917698209853");
-                    Intent intent = new Intent(Intent.ACTION_SENDTO, hii);
-                    intent.setPackage("com.whatsapp");
-                    startActivity(intent);
+                } else if  (id == R.id.nav_AnyImpruvment) {
+                    Intent sendIntent = new Intent();
+                    sendIntent.setAction(Intent.ACTION_VIEW);
+                    String url = "https://api.whatsapp.com/send?phone=" + "+917698209853" + "&text=" + "Hi";
+                    sendIntent.setData(Uri.parse(url));
+                    startActivity(sendIntent);
                 } else if (id == R.id.nav_share) {
                     Intent intent = new Intent(Intent.ACTION_SEND);
                     intent.setType("text/plain");
                     intent.putExtra(Intent.EXTRA_SUBJECT, "subject here");
                     intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.meet.paperface");
                     startActivity(Intent.createChooser(intent, "Share via.."));
+                }else if (id == R.id.nav_order) {
+                    fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.frame, new Ordersfragment());
+                    fragmentTransaction.commit();
+                    i = 0;
                 } else if (id == R.id.nav_Story) {
                     fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.frame, new Story_Fragment());
@@ -199,13 +199,7 @@ public class MainLayout extends AppCompatActivity implements BottomSheetName.Bot
         getMenuInflater().inflate(R.menu.main_layout, menu);
         return true;
     }
-//    @Override
-//    public boolean onSupportNavigateUp() {
-//        NavController navController = Navigation.findNavController( this, R.id.nav_host_fragment );
-//        return NavigationUI.navigateUp( navController, mAppBarConfiguration )
-//               || super.onSupportNavigateUp();
-//        return false;
-//    }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -231,8 +225,7 @@ public class MainLayout extends AppCompatActivity implements BottomSheetName.Bot
                                         , Login_Activity.class);
                                 startActivity(in);
                                 finish();
-                                Toast.makeText(MainLayout.this, "Done"
-                                        , Toast.LENGTH_SHORT).show();
+
                             }
                         });
 
@@ -269,10 +262,7 @@ public class MainLayout extends AppCompatActivity implements BottomSheetName.Bot
         if (sharedPreferences.contains("myName")) {
             name.setText(sharedPreferences.getString("myName", ""));
         }
-        if (sharedPreferences.contains(hello)) {
-            Toast.makeText(this, sharedPreferences.getString(hello, "")
-                    , Toast.LENGTH_SHORT).show();
-        }
+
         userNameEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

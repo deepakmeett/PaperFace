@@ -54,44 +54,50 @@ public class Story_Adapter extends RecyclerView.Adapter<Story_Adapter.ViewHolder
         fa = FirebaseAuth.getInstance();
         FirebaseUser fu = fa.getCurrentUser();
         final String myuid = Objects.requireNonNull(fu).getUid();
-        dr = FirebaseDatabase.getInstance().getReference().child("Reaction");
+
+        try {
+            dr = FirebaseDatabase.getInstance().getReference().child("Reaction");
 
 
-        holder.textView.setText(storyModel.getThesis());
+            holder.textView.setText(storyModel.getThesis());
 
-       dr.child(storyModel.getName()).addValueEventListener(new ValueEventListener() {
-           @Override
-           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            dr.child(storyModel.getName()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-               try {
-                  final String action= Objects.requireNonNull(dataSnapshot.child(myuid).getValue()).toString();
-                   if(action.equals("like")){
-
-
-                       holder.like.setBackground(ContextCompat.getDrawable(context,R.drawable.card_two_home));
-                       holder.dislike.setBackground(ContextCompat.getDrawable(context,R.drawable.likebutton));
-
-                   }
-                   else {
-                       holder.dislike.setBackground(ContextCompat.getDrawable(context,R.drawable.card_two_home));
-                       holder.like.setBackground(ContextCompat.getDrawable(context,R.drawable.likebutton));
+                    try {
+                        final String action= Objects.requireNonNull(dataSnapshot.child(myuid).getValue()).toString();
+                        if(action.equals("like")){
 
 
-                   }
-               }catch (Exception e){
+                            holder.like.setBackground(ContextCompat.getDrawable(context,R.drawable.card_two_home));
+                            holder.dislike.setBackground(ContextCompat.getDrawable(context,R.drawable.likebutton));
+
+                        }
+                        else {
+                            holder.dislike.setBackground(ContextCompat.getDrawable(context,R.drawable.card_two_home));
+                            holder.like.setBackground(ContextCompat.getDrawable(context,R.drawable.likebutton));
 
 
-               }
+                        }
+                    }catch (Exception e){
+
+
+                    }
 
 
 
-           }
+                }
 
-           @Override
-           public void onCancelled(@NonNull DatabaseError databaseError) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-           }
-       });
+                }
+            });
+
+        }catch (Exception e){
+
+        }
 
         holder.like.setOnClickListener(new View.OnClickListener() {
             @Override

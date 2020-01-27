@@ -46,6 +46,8 @@ public class Allorder_adapter extends RecyclerView.Adapter<Allorder_adapter.View
         holder.roomno.setText( fupload.get( position ).getRoomno() );
         holder.totalpage.setText( fupload.get( position ).getTotalpage() );
         holder.totalrs.setText( fupload.get( position ).getTotalrs() );
+        holder.date.setText( fupload.get( position ).getDate() );
+
 
     }
 
@@ -64,6 +66,7 @@ public class Allorder_adapter extends RecyclerView.Adapter<Allorder_adapter.View
         final TextView roomno;
         final TextView totalpage;
         final TextView totalrs;
+        TextView date;
 
         ViewHolder(@NonNull View itemView) {
             super( itemView );
@@ -75,6 +78,8 @@ public class Allorder_adapter extends RecyclerView.Adapter<Allorder_adapter.View
             roomno = itemView.findViewById( R.id.card_room_blank );
             totalpage = itemView.findViewById( R.id.card_Pages_Blank );
             totalrs = itemView.findViewById( R.id.card_Rupees_Blank );
+            date = itemView.findViewById( R.id.card_date_blank );
+
         }
     }
 }
