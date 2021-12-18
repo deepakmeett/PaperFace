@@ -23,15 +23,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.meet.paperface.R;
 import com.meet.paperface.activity.Payment_Activity;
 import com.meet.paperface.adapter.View_Pager_Adapter;
 import com.meet.paperface.model.View_Pager_Model;
-import com.meet.paperface.R;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -47,7 +46,6 @@ public class Home_Fragment extends Fragment {
     private ViewPager viewPager;
     private int sec = 0;
     private DatabaseReference dr;
-
 
     public Home_Fragment() {
         // Required empty public constructor
@@ -70,7 +68,7 @@ public class Home_Fragment extends Fragment {
         edit_page = view.findViewById( R.id.edit_Pages );
         edit_rs = view.findViewById( R.id.edit_Rs );
         viewPager = view.findViewById( R.id.pager );
-        textview1=view.findViewById(R.id.textview1);
+        textview1 = view.findViewById( R.id.textview1 );
         List<View_Pager_Model> view_pager_models = new ArrayList<>();
         View_Pager_Adapter view_pager_adapter = new View_Pager_Adapter( view_pager_models, getContext() );
         view_pager_models.add( new View_Pager_Model( R.drawable.sheet_third ) );
@@ -79,72 +77,49 @@ public class Home_Fragment extends Fragment {
         view_pager_models.add( new View_Pager_Model( R.drawable.sheet_tlt ) );
         viewPager.setAdapter( view_pager_adapter );
         runnable.run();
-
-        dr= FirebaseDatabase.getInstance().getReference().child("Price");
-
-
-
-        Objects.requireNonNull(getActivity()).setTitle("Home");
-
-       getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-
-        View view1=getActivity().getCurrentFocus();
-
-        if(view1 !=null){
-            InputMethodManager imm=(InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-            Objects.requireNonNull(imm).hideSoftInputFromWindow(view1.getWindowToken(),0);
+        dr = FirebaseDatabase.getInstance().getReference().child( "Price" );
+        Objects.requireNonNull( getActivity() ).setTitle( "Home" );
+        getActivity().getWindow().setSoftInputMode( WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN );
+        View view1 = getActivity().getCurrentFocus();
+        if (view1 != null) {
+            InputMethodManager imm = (InputMethodManager) getActivity().getSystemService( Context.INPUT_METHOD_SERVICE );
+            Objects.requireNonNull( imm ).hideSoftInputFromWindow( view1.getWindowToken(), 0 );
         }
-
-
-        dr.addValueEventListener(new ValueEventListener() {
+        dr.addValueEventListener( new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                textview1.setText(Objects.requireNonNull(dataSnapshot.getValue()).toString()+" Rs of 100 Pages");
+                textview1.setText( Objects.requireNonNull( dataSnapshot.getValue() ).toString() + " Rs of 100 Pages" );
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
-        });
-
-
+        } );
         ok.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                View view1 = Objects.requireNonNull(getActivity()).getCurrentFocus();
-
+                View view1 = Objects.requireNonNull( getActivity() ).getCurrentFocus();
                 if (view1 != null) {
-                    InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                    Objects.requireNonNull(imm).hideSoftInputFromWindow(view1.getWindowToken(), 0);
+                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService( Context.INPUT_METHOD_SERVICE );
+                    Objects.requireNonNull( imm ).hideSoftInputFromWindow( view1.getWindowToken(), 0 );
                 }
-
                 String pages = edit_how.getText().toString();
                 String extrapages = edit_extra.getText().toString();
-
                 String pages1 = edit_how.getText().toString();
-
-                if (pages1.isEmpty() || pages1.equals("0")) {
+                if (pages1.isEmpty() || pages1.equals( "0" )) {
                     Toast.makeText( getActivity(), "Please enter Bunch of pages", Toast.LENGTH_SHORT ).show();
-
-                    edit_how.setError("Please enter Bunch of pages");
+                    edit_how.setError( "Please enter Bunch of pages" );
 
                 } else {
-
-
-                    dr.addValueEventListener(new ValueEventListener() {
+                    dr.addValueEventListener( new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
                             String pages = edit_how.getText().toString();
                             String extrapages = edit_extra.getText().toString();
                             int total_pages;
                             float total_rs;
-                            int i=Integer.parseInt(dataSnapshot.getValue().toString());
-
+                            int i = Integer.parseInt( dataSnapshot.getValue().toString() );
                             if (extrapages.isEmpty()) {
                                 extrapages = "0";
 
@@ -160,18 +135,12 @@ public class Home_Fragment extends Fragment {
                             intent.putExtra( "total_page", total_pages + "" );
                             intent.putExtra( "total_rs", x );
 
-
-
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
-
                         }
-                    });
-
-
-
+                    } );
 
                 }
 
@@ -180,12 +149,9 @@ public class Home_Fragment extends Fragment {
         done.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                dr.addValueEventListener(new ValueEventListener() {
+                dr.addValueEventListener( new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
                         float total_rs;
                         String pages = edit_how.getText().toString();
                         String extrapages = edit_extra.getText().toString();
@@ -205,10 +171,7 @@ public class Home_Fragment extends Fragment {
                             int pages_int = Integer.parseInt( pages );
                             int extra_int = Integer.parseInt( extrapages );
                             total_pages = (pages_int * 100) + extra_int;
-
-                            int i=Integer.parseInt(Objects.requireNonNull(dataSnapshot.getValue()).toString());
-
-
+                            int i = Integer.parseInt( Objects.requireNonNull( dataSnapshot.getValue() ).toString() );
                             total_rs = (float) ((total_pages * i) / 100.0);
                             String x = total_rs + "0";
                             Intent intent = new Intent( getContext(), Payment_Activity.class );
@@ -216,16 +179,14 @@ public class Home_Fragment extends Fragment {
                             intent.putExtra( "total_rs", x );
                             startActivity( intent );
 
-
                         }
 
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                     }
-                });
+                } );
 
             }
         } );

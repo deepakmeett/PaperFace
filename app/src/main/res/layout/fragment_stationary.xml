@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.Stationary_Fragment">
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@drawable/back"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/selectPages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="55dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Select Pages"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_single_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_below="@+id/selectPages"
+                    android:layout_marginTop="20dp"
+                    android:elevation="2dp"
+                    app:cardCornerRadius="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/card_single"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/single_page"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Single Side Pages"
+                            android:textColor="@color/darkBlack"
+                            android:textSize="20sp"/>
+
+                        <ImageView
+                            android:id="@+id/star"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/single_page"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/star"/>
+
+                        <TextView
+                            android:id="@+id/colorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/star"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Color : White"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/materialPaper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/colorWhite"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Material : Paper"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/finishSmooth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/materialPaper"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Finishing : Smooth"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <View
+                            android:layout_width="97dp"
+                            android:layout_height="33dp"
+                            android:layout_below="@+id/finishSmooth"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/lets"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/finishSmooth"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="17dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Let's order it"
+                            android:textColor="@color/darkBlack"
+                            android:textSize="12sp"/>
+
+                        <ImageView
+                            android:id="@+id/single_page_image"
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/single"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_double_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_below="@+id/card_single_page"
+                    android:layout_marginTop="20dp"
+                    android:elevation="2dp"
+                    app:cardCornerRadius="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/card_doble"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/double_page"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Double Side Pages"
+                            android:textColor="@color/darkBlack"
+                            android:textSize="20sp"/>
+
+                        <ImageView
+                            android:id="@+id/double_star"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/double_page"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/star"/>
+
+                        <TextView
+                            android:id="@+id/doubleColorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/double_star"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Color : White"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/doubleMaterialPaper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/doubleColorWhite"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Material : Paper"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/doubleFinishSmooth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/doubleMaterialPaper"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Finishing : Smooth"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <View
+                            android:layout_width="97dp"
+                            android:layout_height="33dp"
+                            android:layout_below="@+id/doubleFinishSmooth"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/lets"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/doubleFinishSmooth"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="17dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Let's order it"
+                            android:textColor="@color/darkBlack"
+                            android:textSize="12sp"/>
+
+                        <ImageView
+                            android:id="@+id/double_page_image"
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/doble"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/blank_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_below="@+id/card_double_page"
+                    android:layout_marginTop="20dp"
+                    android:elevation="2dp"
+                    app:cardCornerRadius="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/card_tree"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/blankText_page"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Blank Pages"
+                            android:textColor="@color/darkBlack"
+                            android:textSize="20sp"/>
+
+                        <ImageView
+                            android:id="@+id/blank_star"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/blankText_page"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/star"/>
+
+                        <TextView
+                            android:id="@+id/blankColorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/blank_star"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Color : White"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/blankMaterialPaper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/blankColorWhite"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Material : Paper"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/blankFinishSmooth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/blankMaterialPaper"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Finishing : Smooth"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <View
+                            android:layout_width="97dp"
+                            android:layout_height="33dp"
+                            android:layout_below="@+id/blankFinishSmooth"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/lets"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/blankFinishSmooth"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="17dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Let's order it"
+                            android:textColor="@color/darkBlack"
+                            android:textSize="12sp"/>
+
+                        <ImageView
+                            android:id="@+id/blank_page_image"
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/blank"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/graph_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_below="@+id/blank_page"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="100dp"
+                    android:elevation="2dp"
+                    app:cardCornerRadius="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/card_fr"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/graphText_page"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Graph Papers"
+                            android:textColor="@color/darkBlack"
+                            android:textSize="20sp"/>
+
+                        <ImageView
+                            android:id="@+id/graph_star"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/graphText_page"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/star"/>
+
+                        <TextView
+                            android:id="@+id/graphColorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/graph_star"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Color : White"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/graphMaterialPaper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/graphColorWhite"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Material : Paper"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/graphFinishSmooth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/graphMaterialPaper"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Finishing : Smooth"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <View
+                            android:layout_width="97dp"
+                            android:layout_height="33dp"
+                            android:layout_below="@+id/graphFinishSmooth"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/lets"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/graphFinishSmooth"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="17dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="Let's order it"
+                            android:textColor="@color/darkBlack"
+                            android:textSize="12sp"/>
+
+                        <ImageView
+                            android:id="@+id/graph_page_image"
+                            android:layout_width="180dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/graph"/>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</FrameLayout>

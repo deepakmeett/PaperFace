@@ -45,7 +45,6 @@ public class Mv_hall_adeptor extends RecyclerView.Adapter<Mv_hall_adeptor.ViewHo
         fcontext = context;
         fupload = user;
         fupload1 = user1;
-
     }
 
     @NonNull
@@ -60,7 +59,6 @@ public class Mv_hall_adeptor extends RecyclerView.Adapter<Mv_hall_adeptor.ViewHo
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         dr = FirebaseDatabase.getInstance().getReference().child( "Orders" );
         databaseReference = FirebaseDatabase.getInstance().getReference().child( "Pastorder" );
-
         databaseReferenceall = FirebaseDatabase.getInstance().getReference().child( "Allorders" );
         databaseReference1 = FirebaseDatabase.getInstance().getReference().child( "YourOrder" );
         final String ss = dr.getRef().getKey();
@@ -99,9 +97,6 @@ public class Mv_hall_adeptor extends RecyclerView.Adapter<Mv_hall_adeptor.ViewHo
                 databaseReferenceall.push().setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-
-
-
                     }
                 });
                 databaseReference.child( fupload.get( position ).getUid() ).push().setValue( map ).addOnCompleteListener( new OnCompleteListener<Void>() {

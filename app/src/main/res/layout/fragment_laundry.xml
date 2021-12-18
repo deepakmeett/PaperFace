@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.Laundry_Fragment">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@drawable/back"/>
+        
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/selectServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="55dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Select Services"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"/>
+                -
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_wash"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/selectServices"
+                    android:layout_marginTop="20dp"
+                    android:elevation="1dp"
+                    app:cardCornerRadius="10dp">
+                    -
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/machine"/>
+                        -
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp">
+
+                            <TextView
+                                android:id="@+id/wash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:layout_toEndOf="@+id/radioOne"
+                                android:fontFamily="sans-serif-light"
+                                android:text="Wash"
+                                android:textColor="@color/darkBlack"
+                                android:textSize="16sp"/>
+
+                            <CheckBox
+                                android:id="@+id/radioOne"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"/>
+
+                            <TextView
+                                android:id="@+id/rsOne"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/wash"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/current_amount"
+                                android:textColor="@color/darkBlack"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/rsWash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/wash"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_toEndOf="@+id/rsOne"
+                                android:fontFamily="sans-serif-light"
+                                android:text="06.00 per garment"
+                                android:textColor="@color/darkBlack"
+                                android:textSize="14sp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                -
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_iron"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/card_wash"
+                    android:layout_marginTop="20dp"
+                    android:elevation="1dp"
+                    app:cardCornerRadius="10dp">
+                    -
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/iron"/>
+                        -
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp">
+
+                            <TextView
+                                android:id="@+id/ironing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:layout_toEndOf="@+id/radioTwo"
+                                android:fontFamily="sans-serif-light"
+                                android:text="Ironing"
+                                android:textColor="@color/darkBlack"
+                                android:textSize="16sp"/>
+
+                            <CheckBox
+                                android:id="@+id/radioTwo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/rsTwo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ironing"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/current_amount"
+                                android:textColor="@color/darkBlack"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/rsIroning"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ironing"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_toEndOf="@+id/rsTwo"
+                                android:fontFamily="sans-serif-light"
+                                android:text="06.00 per garment"
+                                android:textColor="@color/darkBlack"
+                                android:textSize="14sp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                -
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ironWash"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/card_iron"
+                    android:layout_marginTop="20dp"
+                    android:elevation="1dp"
+                    app:cardCornerRadius="10dp">
+                    -
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/washing"/>
+                        -
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp">
+
+                            <TextView
+                                android:id="@+id/washIron"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:layout_toEndOf="@+id/radioThree"
+                                android:fontFamily="sans-serif-light"
+                                android:text="Wash + Ironing"
+                                android:textColor="@color/darkBlack"
+                                android:textSize="16sp"/>
+
+                            <CheckBox
+                                android:id="@+id/radioThree"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/rsThree"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/washIron"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="sans-serif-light"
+                                android:text="@string/current_amount"
+                                android:textColor="@color/darkBlack"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/rsWashIroning"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/washIron"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_toEndOf="@+id/rsThree"
+                                android:fontFamily="sans-serif-light"
+                                android:text="06.00 per garment"
+                                android:textColor="@color/darkBlack"
+                                android:textSize="14sp"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <EditText
+                    android:id="@+id/garment"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/ironWash"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edit"
+                    android:hint="Number of apparels"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"/>
+                
+
+                <LinearLayout
+                    android:id="@+id/card_trans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/garment"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/tfo"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/btnone"
+                        android:visibility="visible"/>
+
+                    <ImageView
+                        android:id="@+id/tft"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="50dp"
+                        android:src="@drawable/btnfour"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+                -
+
+                <LinearLayout
+                    android:id="@+id/card_transTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/garment"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/tfth"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/btnthree"
+                        android:visibility="invisible"/>
+
+                    <ImageView
+                        android:id="@+id/tff"
+                        android:layout_width="130dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="50dp"
+                        android:src="@drawable/btntwo"
+                        android:visibility="visible"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/done"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_trans"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/card_two_home"
+                    android:elevation="10dp"
+                    android:text="@string/ok"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    tools:targetApi="lollipop"/>
+
+                <TextView
+                    android:id="@+id/approxAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/done"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Total approx amount"
+                    android:textColor="@color/darkBlack"
+                    android:textSize="16sp"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/done"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toStartOf="@+id/pay"
+                    android:text="@string/current_amount"
+                    android:textColor="@color/darkBlack"
+                    android:textSize="16sp"
+                    android:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/done"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="18.00"
+                    android:textColor="@color/darkBlack"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/discription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/approxAmount"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/editdesc"
+                    android:hint="Description"
+                    android:paddingStart="30dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="30dp"
+                    android:paddingBottom="15dp"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/placeOrder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/discription"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="100dp"
+                    android:background="@drawable/card_five_home"
+                    android:elevation="10dp"
+                    android:text="Place Order"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    tools:targetApi="lollipop"/>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</FrameLayout>

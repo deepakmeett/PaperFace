@@ -1,14 +1,12 @@
 package com.meet.paperface.model;
-
 public class Users {
 
-    private String hostelname,mobileno,name,other,payment,roomno,totalpage,totalrs,uid,date;
-
+    private String hostelname, mobileno, name, other, payment, roomno, totalpage, totalrs, uid, date;
 
     public Users() {
     }
 
-    public Users(String hostelname, String mobileno, String name, String other, String payment, String roomno, String totalpage, String totalrs,String uid,String date) {
+    public Users(String hostelname, String mobileno, String name, String other, String payment, String roomno, String totalpage, String totalrs, String uid, String date) {
         this.hostelname = hostelname;
         this.mobileno = mobileno;
         this.name = name;
@@ -20,9 +18,7 @@ public class Users {
         this.uid = uid;
         this.date = date;
 
-
     }
-
 
     public String getHostelname() {
         return hostelname;
@@ -103,6 +99,5 @@ public class Users {
     public void setDate(String date) {
         this.date = date;
     }
-
 
 }

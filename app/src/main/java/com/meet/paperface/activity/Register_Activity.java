@@ -96,7 +96,7 @@ public class Register_Activity extends AppCompatActivity {
                     Toast.makeText( Register_Activity.this, "Password length should be minimum 6 and not more than 8. It may have characters with digits", Toast.LENGTH_LONG ).show();
                 } else {
                     mRegProgress.setTitle( "Registering User" );
-                    mRegProgress.setMessage( "Please wait while we create your account !" );
+                    mRegProgress.setMessage( "Please wait while we create your account!" );
                     mRegProgress.setCanceledOnTouchOutside( false );
                     mRegProgress.show();
                     mAuth.createUserWithEmailAndPassword( email, password ).addOnCompleteListener( Register_Activity.this, new OnCompleteListener<AuthResult>() {

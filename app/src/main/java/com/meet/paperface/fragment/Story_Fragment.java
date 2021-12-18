@@ -84,5 +84,4 @@ public class Story_Fragment extends Fragment {
             }
         } );
     }
-
 }

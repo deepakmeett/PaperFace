@@ -4,9 +4,7 @@ public class Task_Class {
 
     private String key;
 
-    public Task_Class(){
-
-
+    public Task_Class() {
     }
 
     public Task_Class(String key) {

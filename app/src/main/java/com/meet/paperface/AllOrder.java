@@ -44,10 +44,6 @@ public class AllOrder extends AppCompatActivity {
                 for (DataSnapshot ss : dataSnapshot.getChildren()) {
                          Users user = ss.getValue( Users.class );
                               list_data.add( user );
-
-
-
-
                 }
                 adaptor = new Allorder_adapter( AllOrder.this, list_data);
                 rv.setAdapter( adaptor );

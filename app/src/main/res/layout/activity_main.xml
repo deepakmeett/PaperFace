@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Login_Activity"
-    android:scrollbarThumbVertical="@android:color/transparent"
     android:fillViewport="true"
-    >
+    android:scrollbarThumbVertical="@android:color/transparent"
+    tools:context=".activity.Login_Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -120,21 +119,21 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
-            android:layout_marginTop="50dp"
             android:paddingBottom="10dp">
 
             <TextView
                 android:id="@+id/signUp"
-                android:visibility="visible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:text="@string/signUp"
                 android:textColor="@color/blue"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:visibility="visible"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -156,10 +155,6 @@
                 android:textColor="@color/blue"
                 android:textSize="18sp"
                 android:visibility="invisible"/>
-
         </RelativeLayout>
-
     </LinearLayout>
-
-
 </ScrollView>

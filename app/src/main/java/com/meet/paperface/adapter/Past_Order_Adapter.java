@@ -84,9 +84,7 @@ public class Past_Order_Adapter extends RecyclerView.Adapter<Past_Order_Adapter.
         databaseReference.child(myuid).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-
-
-
+                
             }
         });
 
